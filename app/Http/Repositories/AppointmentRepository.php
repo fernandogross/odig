@@ -42,4 +42,13 @@ class AppointmentRepository
 	{
 		return $this->appointment->where($params)->first();
 	}
+
+	public function validateStore($params)
+	{
+		return $this->appointment
+			->where('user', $params['user'])
+			->whereBetween('start_date', [$params['start_date'], $params['deadline']])
+			->whereBetween('deadline', [$params['start_date'], $params['deadline']])
+			->first();
+	}
 }

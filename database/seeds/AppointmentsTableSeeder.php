@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class AppointmentsTableSeeder extends Seeder
 {
@@ -18,7 +19,8 @@ class AppointmentsTableSeeder extends Seeder
 			'status' => 0,
 			'title' => 'Study about Laravel',
 			'description' => 'Cover basic CRUD and Auth.',
-			'user' => 'Fernando'
+			'user' => 'Fernando',
+			'created_at' => Carbon::now()
         ]);
 
         DB::table('appointments')->insert([
@@ -28,7 +30,8 @@ class AppointmentsTableSeeder extends Seeder
 			'status' => 0,
 			'title' => 'Build Rest API',
 			'description' => 'Develop a Rest API using Laravel.',
-			'user' => 'Fernando'
+			'user' => 'Fernando',
+			'created_at' => Carbon::now()
         ]);
 
         DB::table('appointments')->insert([
@@ -38,7 +41,8 @@ class AppointmentsTableSeeder extends Seeder
 			'status' => 0,
 			'title' => 'Build Tests for Rest API',
 			'description' => 'Cover every method of Appointments Service and Repository.',
-			'user' => 'Fernando'
+			'user' => 'Fernando',
+			'created_at' => Carbon::now()
         ]);
     }
 }

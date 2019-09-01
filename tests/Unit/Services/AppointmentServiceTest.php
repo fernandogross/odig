@@ -45,14 +45,15 @@ class AppointmentServiceTest extends TestCase
 	public function testStore()
 	{
 		$params = [
-			'start_date' => '2019-09-25',
+			'start_date' => '2019-01-02',
+			'deadline' => '2019-01-03',
 			'user' => 'Fernando'
 		];
 		$data = [
 			'id' => 1,
-			'start_date' => '2019-09-25',
+			'start_date' => '2019-01-02',
 			'concluded_date' => null,
-			'deadline' => '2019-09-30',
+			'deadline' => '2019-01-03',
 			'status' => 0,
 			'title' => 'Testing for Odig',
 			'description' => 'Create tests using Mockery.',
@@ -60,7 +61,7 @@ class AppointmentServiceTest extends TestCase
 		];
 
 		$appointmentRepositoryMock = Mockery::Mock(AppointmentRepository::class);
-		$appointmentRepositoryMock->shouldReceive('first')
+		$appointmentRepositoryMock->shouldReceive('validateStore')
 			->with($params)
 			->andReturnNull()
 			->shouldReceive('store')
@@ -80,14 +81,15 @@ class AppointmentServiceTest extends TestCase
 	public function testStoreDateNotAvailable()
 	{
 		$params = [
-			'start_date' => '2019-09-25',
+			'start_date' => '2019-09-17',
+			'deadline' => '2019-09-18',
 			'user' => 'Fernando'
 		];
 		$data = [
 			'id' => 1,
-			'start_date' => '2019-09-25',
+			'start_date' => '2019-09-17',
 			'concluded_date' => null,
-			'deadline' => '2019-09-30',
+			'deadline' => '2019-09-18',
 			'status' => 0,
 			'title' => 'Testing for Odig',
 			'description' => 'Create tests using Mockery.',
@@ -97,13 +99,13 @@ class AppointmentServiceTest extends TestCase
 		$appointment = new Appointment;
 
 		$appointmentRepositoryMock = Mockery::Mock(AppointmentRepository::class);
-		$appointmentRepositoryMock->shouldReceive('first')
+		$appointmentRepositoryMock->shouldReceive('validateStore')
 			->with($params)
 			->andReturn($appointment);
 
 		$checkedDate = [
 			'success' => false,
-			'message' => 'The selected date already has an appointment.',
+			'message' => 'The selected period already has an appointment for this user.',
 			'status' => 200
 		];
 		$appointmentService = new AppointmentService($appointmentRepositoryMock);
@@ -116,13 +118,14 @@ class AppointmentServiceTest extends TestCase
 	{
 		$params = [
 			'start_date' => '2019-09-07',
+			'deadline' => '2019-09-18',
 			'user' => 'Fernando'
 		];
 		$data = [
 			'id' => 1,
 			'start_date' => '2019-09-07',
 			'concluded_date' => null,
-			'deadline' => '2019-09-30',
+			'deadline' => '2019-09-18',
 			'status' => 0,
 			'title' => 'Testing for Odig',
 			'description' => 'Create tests using Mockery.',
@@ -130,7 +133,7 @@ class AppointmentServiceTest extends TestCase
 		];
 
 		$appointmentRepositoryMock = Mockery::Mock(AppointmentRepository::class);
-		$appointmentRepositoryMock->shouldReceive('first')
+		$appointmentRepositoryMock->shouldReceive('validateStore')
 			->with($params)
 			->andReturnNull();
 

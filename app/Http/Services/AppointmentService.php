@@ -25,13 +25,14 @@ class AppointmentService
 	{
 		$params = [
 			'start_date' => $data['start_date'],
+			'deadline' => $data['deadline'],
 			'user' => $data['user']
 		];		
-		$checkDate = $this->appointmentRepository->first($params);
+		$checkDate = $this->appointmentRepository->validateStore($params);
 		if ($checkDate) {
 			return [
 				'success' => false,
-				'message' => 'The selected date already has an appointment.',
+				'message' => 'The selected period already has an appointment for this user.',
 				'status' => 200
 			];
 		}
