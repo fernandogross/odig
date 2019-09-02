@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="./tests/Unit/" tests="19" assertions="45" errors="0" failures="0" skipped="0" time="7.724442">
+    <testsuite name="Tests\Unit\ExampleTest" file="D:\Laravel\odig\tests\Unit\ExampleTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.356020">
+      <testcase name="testBasicTest" class="Tests\Unit\ExampleTest" classname="Tests.Unit.ExampleTest" file="D:\Laravel\odig\tests\Unit\ExampleTest.php" line="15" assertions="1" time="0.356020"/>
+    </testsuite>
+    <testsuite name="Test\Unit\Repositories\AppointmentRepositoryTest" file="D:\Laravel\odig\tests\Unit\Repositories\AppointmentRepositoryTest.php" tests="8" assertions="23" errors="0" failures="0" skipped="0" time="2.229129">
+      <testcase name="testConstruct" class="Test\Unit\Repositories\AppointmentRepositoryTest" classname="Test.Unit.Repositories.AppointmentRepositoryTest" file="D:\Laravel\odig\tests\Unit\Repositories\AppointmentRepositoryTest.php" line="13" assertions="1" time="0.660038"/>
+      <testcase name="testIndex" class="Test\Unit\Repositories\AppointmentRepositoryTest" classname="Test.Unit.Repositories.AppointmentRepositoryTest" file="D:\Laravel\odig\tests\Unit\Repositories\AppointmentRepositoryTest.php" line="22" assertions="2" time="0.221013"/>
+      <testcase name="testStore" class="Test\Unit\Repositories\AppointmentRepositoryTest" classname="Test.Unit.Repositories.AppointmentRepositoryTest" file="D:\Laravel\odig\tests\Unit\Repositories\AppointmentRepositoryTest.php" line="43" assertions="3" time="0.213012"/>
+      <testcase name="testUpdate" class="Test\Unit\Repositories\AppointmentRepositoryTest" classname="Test.Unit.Repositories.AppointmentRepositoryTest" file="D:\Laravel\odig\tests\Unit\Repositories\AppointmentRepositoryTest.php" line="62" assertions="3" time="0.221013"/>
+      <testcase name="testDestroy" class="Test\Unit\Repositories\AppointmentRepositoryTest" classname="Test.Unit.Repositories.AppointmentRepositoryTest" file="D:\Laravel\odig\tests\Unit\Repositories\AppointmentRepositoryTest.php" line="81" assertions="3" time="0.221013"/>
+      <testcase name="testSort" class="Test\Unit\Repositories\AppointmentRepositoryTest" classname="Test.Unit.Repositories.AppointmentRepositoryTest" file="D:\Laravel\odig\tests\Unit\Repositories\AppointmentRepositoryTest.php" line="95" assertions="3" time="0.228013"/>
+      <testcase name="testFirst" class="Test\Unit\Repositories\AppointmentRepositoryTest" classname="Test.Unit.Repositories.AppointmentRepositoryTest" file="D:\Laravel\odig\tests\Unit\Repositories\AppointmentRepositoryTest.php" line="122" assertions="3" time="0.224013"/>
+      <testcase name="testValidateStore" class="Test\Unit\Repositories\AppointmentRepositoryTest" classname="Test.Unit.Repositories.AppointmentRepositoryTest" file="D:\Laravel\odig\tests\Unit\Repositories\AppointmentRepositoryTest.php" line="150" assertions="5" time="0.241014"/>
+    </testsuite>
+    <testsuite name="Test\Unit\Service\AppointmentServiceTest" file="D:\Laravel\odig\tests\Unit\Services\AppointmentServiceTest.php" tests="10" assertions="21" errors="0" failures="0" skipped="0" time="5.139293">
+      <testcase name="testConstruct" class="Test\Unit\Service\AppointmentServiceTest" classname="Test.Unit.Service.AppointmentServiceTest" file="D:\Laravel\odig\tests\Unit\Services\AppointmentServiceTest.php" line="14" assertions="1" time="3.224184"/>
+      <testcase name="testIndex" class="Test\Unit\Service\AppointmentServiceTest" classname="Test.Unit.Service.AppointmentServiceTest" file="D:\Laravel\odig\tests\Unit\Services\AppointmentServiceTest.php" line="23" assertions="2" time="0.215012"/>
+      <testcase name="testStore" class="Test\Unit\Service\AppointmentServiceTest" classname="Test.Unit.Service.AppointmentServiceTest" file="D:\Laravel\odig\tests\Unit\Services\AppointmentServiceTest.php" line="45" assertions="3" time="0.213013"/>
+      <testcase name="testStoreDateNotAvailable" class="Test\Unit\Service\AppointmentServiceTest" classname="Test.Unit.Service.AppointmentServiceTest" file="D:\Laravel\odig\tests\Unit\Services\AppointmentServiceTest.php" line="81" assertions="2" time="0.215012"/>
+      <testcase name="testStoreDateIsWeekend" class="Test\Unit\Service\AppointmentServiceTest" classname="Test.Unit.Service.AppointmentServiceTest" file="D:\Laravel\odig\tests\Unit\Services\AppointmentServiceTest.php" line="117" assertions="2" time="0.213012"/>
+      <testcase name="testUpdate" class="Test\Unit\Service\AppointmentServiceTest" classname="Test.Unit.Service.AppointmentServiceTest" file="D:\Laravel\odig\tests\Unit\Services\AppointmentServiceTest.php" line="151" assertions="2" time="0.210012"/>
+      <testcase name="testDestroy" class="Test\Unit\Service\AppointmentServiceTest" classname="Test.Unit.Service.AppointmentServiceTest" file="D:\Laravel\odig\tests\Unit\Services\AppointmentServiceTest.php" line="174" assertions="3" time="0.211012"/>
+      <testcase name="testDestroyIdNotFound" class="Test\Unit\Service\AppointmentServiceTest" classname="Test.Unit.Service.AppointmentServiceTest" file="D:\Laravel\odig\tests\Unit\Services\AppointmentServiceTest.php" line="200" assertions="2" time="0.212012"/>
+      <testcase name="testSort" class="Test\Unit\Service\AppointmentServiceTest" classname="Test.Unit.Service.AppointmentServiceTest" file="D:\Laravel\odig\tests\Unit\Services\AppointmentServiceTest.php" line="223" assertions="2" time="0.216012"/>
+      <testcase name="testSortNotFound" class="Test\Unit\Service\AppointmentServiceTest" classname="Test.Unit.Service.AppointmentServiceTest" file="D:\Laravel\odig\tests\Unit\Services\AppointmentServiceTest.php" line="257" assertions="2" time="0.210012"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

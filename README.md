@@ -20,6 +20,8 @@ Clone this repository and run the following steps/commands:
 1) Run: composer install
 2) Rename the file .env.example to .env
 3) Run: php artisan key:generate
+4) Run: php artisan migrate
+5) Run: php artisan db:seed
 ```
 
 ## Deployment
@@ -73,10 +75,22 @@ An example on how to sort appointments with starting date between two dates usin
 The tests for this project were built with Mockery.
 
 ## Running Tests
-From root run the following commands:
+From root run the following command:
 ```
-AppointmentService: ./vendor/bin/phpunit ./tests/Unit/Services/AppointmentServiceTest.php
-AppointmentRepository: $ ./vendor/bin/phpunit ./tests/Unit/Repositories/AppointmentRepositoryTest.php
+./vendor/bin/phpunit ./tests/Unit
+```
+
+## Test Coverage
+To check test coverage on this project you need [Xdebug](https://xdebug.org/download.php) ([documentation available here](https://xdebug.org/docs)).
+
+From root run the following command:
+```
+./vendor/bin/phpunit ./tests/Unit/ --coverage-html coverage
+```
+
+Check the coverage file:
+```
+./coverage/index.html
 ```
 
 ## Build with
