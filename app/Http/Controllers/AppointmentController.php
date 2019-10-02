@@ -4,44 +4,43 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Services\AppointmentService;
+use App\Repositories\AppointmentRepository;
 
 class AppointmentController extends Controller
 {
-    private $appointmentService;
+    private $appointmentRepository;
 
-    public function __construct(AppointmentService $appointmentService)
+    public function __construct(AppointmentRepository $appointmentRepository)
     {
-        $this->appointmentService = $appointmentService;
+        $this->appointmentRepository = $appointmentRepository;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return response()->json($this->appointmentService->index());
+        $params = [
+            'fromDate' => $request->fromDate,
+            'toDate' => $request->toDate
+        ];
+        return response()->json($this->appointmentRepository->index($params));
     }
 
     public function store(Request $request)
     {
         $data = $request->all();
-        $result = $this->appointmentService->store($data);
+        $result = $this->appointmentRepository->store($data);
         return response()->json($result, $result['status']);
     }
 
     public function update(Request $request)
     {
         $data = $request->all();
-        return $this->appointmentService->update($data);
+        $result = $this->appointmentRepository->update($data);
+        return response()->json($result, $result['status']);
     }
 
     public function destroy($id)
     {
-        $result = $this->appointmentService->destroy($id);
-        return response()->json($result, $result['status']);
-    }
-
-    public function sort(Request $request)
-    {
-        $result = $this->appointmentService->sort($request->fromDate, $request->toDate);
+        $result = $this->appointmentRepository->destroy($id);
         return response()->json($result, $result['status']);
     }
 }
